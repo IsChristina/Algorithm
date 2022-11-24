@@ -21,3 +21,16 @@
 //  1
 // 输出: 4
 
+var kthlargest = function(root,k){
+    let res;
+     function dfs(root){
+        if(root === null) return 
+        dfs(root.right)
+        if(k === 0) return
+        k = k-1
+        if(k === 0) res = root.val
+        dfs(root.left)
+     }
+     dfs(root)
+     return res
+}
